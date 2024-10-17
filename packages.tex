@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%
+% pandoc command %
+%%%%%%%%%%%%%%%%%%
+
+%pandoc --bibliography=references.bib --bibliography=references_local.bib -o main.docx main.tex --citeproc --csl=SBL.csl
+%I took the .csl file directly from zotero -> modify style -> save as...
+
+
+\usepackage{hyphenat}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{makecell}
+\usepackage[utf8]{inputenc}
+\usepackage{tipa} %phonetic characters
+\usepackage{lua-ul} %pour barrer du texte avec la commande \strikeThrough
+\usepackage[autostyle]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage[document]{ragged2e} %Permet de régler les alignements
+\let\oldfootnote\footnote
+\renewcommand{\footnote}[1]{\oldfootnote{\justifying #1}} %Justify footnotes
+
+\usepackage[dvipsnames]{xcolor} %Allow colors
+
+% -------------------------------
+%  Language Hebrew & Greek     
+% -------------------------------
+\usepackage{polyglossia} %[babelshorthands] permet d'avoir les guillemets allemands avec le code "`toto"' et les guillemets français avec le code "<tata">
+\setdefaultlanguage[variant=american]{english}
+%\PolyglossiaSetup{english}{indentfirst=false}
+\setotherlanguages{french, hebrew, syriac, greek}
+\hyphenation{manu-script, manu-scripts, stem-ma, inter-relation-ship}
+% ------------------------
+% Define fonts
+% ------------------------
+
+\usepackage{fontspec}
+\setmainfont[]{cochineal}
+% %\setmainfont[Path=./fonts/,
+%  BoldFont={Brill-Bold.ttf}, 
+%  ItalicFont={Brill-Italic.ttf},
+%  BoldItalicFont={Brill-BoldItalic.ttf}
+%  ]{Brill-Roman.ttf}
+ 
+\newfontfamily{\hebrewfont}[Script=Hebrew, Path=./fonts/]{SBL_Hbrw.ttf}
+\newfontfamily{\hebrewfontsf}[Script=Hebrew]{Miriam CLM}
+\newfontfamily{\hebrewfonttt}[Script=Hebrew]{Miriam Mono CLM}
+%\newfontfamily\hebrewfont[Script=Hebrew]{SBL_BLit.ttf}
+\newfontfamily\syriacfont[Script=Syriac, Path=./fonts/]{EstrangeloEdessa.ttf}
+
+
+
+% ---------------------------
+% Image Package
+% ---------------------------
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+\usepackage{float} %Pour placer les figures au bon endroit
+% ---------------------------
+
+
+
+% ---------------------------
+% Define Bibliography
+% ---------------------------
+% Load main style
+% Pass indexing=cite to biblatex (if you want author indexing)
+\PassOptionsToPackage{indexing=cite}{biblatex}
+% Pass jblstyle to sbl-paper if you want double spaced footnotes
+% \usepackage{sbl-paper}
+%\usepackage[style=sbl,doi=false,issn=false,isbn=false,url=false,eprint=false,]{biblatex}
+\usepackage[style=sbl]{biblatex}
+
+
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldset=doi, null]
+      \step[fieldset=language, null]
+      \step[fieldset=issn, null]{}
+      \step[fieldset=url, null]{}
+      \step[fieldset=isbn, null]{}
+      \step[fieldset=eprint, null]{}
+    }
+  }
+}
+
+%doi=false,issn=false,isbn=false,url=false,eprint=false,
+
+% Add your bib resource here
+
+\addbibresource{references.bib}
+\addbibresource{references_local.bib}
+%\addbibresource{biblio.bib}
+\useshorttitle
+\AtEveryBibitem{\clearlist{language}\clearfield{doi}}
+
+
+
+%%%%%%%%%%%%%%%%%%%
+% Create todolist %
+%%%%%%%%%%%%%%%%%%%
+
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+
+
+% ---------------------------------------------------------------------
