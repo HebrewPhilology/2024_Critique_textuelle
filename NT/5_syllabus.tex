@@ -1,0 +1,179 @@
+\documentclass[a4, 12pt]{article}
+\usepackage{hyperref}
+\usepackage[right=2.5cm, left=2.5cm,top=1.5cm]{geometry}
+\usepackage[french]{babel}
+\usepackage[style=authoryear-ibid,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+
+%%%%%% FONTSTYLE
+\usepackage[heuristica,vvarbb,bigdelims]{newtxmath}
+\usepackage{fontspec}
+\setmainfont{Noto Serif}
+% \setmainfont{Eczar-Regular.otf}[BoldFont=Eczar-SemiBold.otf]
+% \renewcommand*\oldstylenums[1]{\textosf{#1}}
+%%%%%%%%%%%%
+
+%%% ENVIRONMENT BOXES
+\usepackage[most]{tcolorbox}
+\newtcolorbox{skills}
+{
+colback=teal!5,
+frame hidden,
+sharp corners,
+enhanced,
+borderline west={3pt}{0pt}{teal}}
+\newtcolorbox{info}
+{
+colback=pink!5,
+frame hidden,
+sharp corners,
+enhanced,
+borderline west={3pt}{0pt}{pink},
+}
+%%%%%%%%%%%%
+\providecommand{\keywords}[1]{\textbf{\textit{Définitions à retenir---}} #1}
+
+
+%%%% BIBLIOGRAPHY
+\addbibresource{bibliography.bib}
+\defbibheading{bibempty}{}
+%%%%%%%%%%%%
+
+
+\title{Syllabus \\
+Introduction à la critique textuelle néo-testamentaire\vspace{-.5cm}}
+\date{Institut Protestant de Théologie - Site de Montpellier}
+\author{Sophie Robert-Hayek, Université de Lorraine}
+
+\begin{document}
+
+\maketitle
+
+% \begin{skills}{}
+% Test
+% \end{skills}
+
+% \section{Organisation des séances}
+
+% \subsection{Qu'est-ce que la critique textuelle ?}
+
+% \begin{itemize}
+%     \item Définitions;
+%     \item Rôle et objectifs;
+%     \item Bref historique;
+%     \item Présentation de nos outils de travail:
+%         \begin{itemize}
+%             \item Le Nestlé-Aland;
+%             \item Le \emph{New Testament Virtual Manuscript Room} (NTVMR);
+%             \item StepBible (\verb|stepbible.org|)
+%         \end{itemize}
+% \end{itemize}
+
+% \subsection{Paléographie et codicologie des manuscrits néo-testamentaires}
+% \begin{itemize}
+%     \item Les langues du Nouveau Testament;
+%     \item Codicologie des manuscrits;
+%     \item Paléographie des manuscrits;
+%     \item Impact des annotations sur la critique textuelle;
+%     \item Cas d'étude: \textbf{le Sinaïticus}.
+% \end{itemize}
+
+% \subsection{Classifier les manuscrits néo-testamentaires}
+
+% \begin{itemize}
+%     \item Les classifications paléographiques/
+%     \item Les classifications sur la \og qualité \fg\ du texte;
+%     \item Les classifications sur le contenu du texte:
+%         \begin{itemize}
+%             \item Classification de Von Soden;
+%             \item Classification de Wisse;
+%             \item Classification de Colwell;
+%         \end{itemize}
+% \end{itemize}
+
+% \subsection{Éditer le texte néo-testamentaire}
+
+% \begin{itemize}
+%     \item Présentation de la méthode;
+%     \item Présentation et étude d'une édition critique majeure: le Nestlé-Aland;
+% \end{itemize}
+
+% \subsection{Séance de travaux pratique}
+% \begin{itemize}
+%     \item Présentation de plusieurs manuscrits majeurs;
+%     \item Réalisation à la main de l'édition critique de Marc 1,1-2;
+%     \item Comparaison avec le Nestlé-Aland et discussion.
+% \end{itemize}
+
+% \subsection{Nouvelles directions en critique textuelle}
+% \begin{itemize}
+%     \item Les nouveaux outils d'édition (collation automatique, XML TEI, \dots);
+%     \item Les approches quantitatives appliquées au texte biblique.
+% \end{itemize}
+
+\section{Plan du cours}
+\begin{enumerate}
+    \item Introduction, définitions, et objectifs;
+    \item Les sources du texte néo-testamentaire;
+    \item Les premiers textes imprimés;
+    \item Les principes de la critique textuelle : cas pratique(s);
+    \item La critique textuelle à l'ère du numérique.
+\end{enumerate}
+
+\section{Modalités de validation}
+
+La validation du cours s'effectue par la préparation d'un dossier (> 5 pages), qui présentera pour Marc 1,1-2a et pour les témoins proposés dans le cas pratique :
+\begin{itemize}
+    \item La collation des textes;
+    \item L'examen des variants;
+    \item La critique interne des leçons;
+    \item La critique externe des manuscrits;
+    \item L'établissement du texte;
+    \item La comparaison par rapport au texte retenu par le Nestlé-Aland.
+\end{itemize}
+
+\section{Bibliographie conseillée}
+
+\paragraph{Ouvrages généraux}
+
+\begin{itemize}
+    \item \fullcite{West1973}
+\end{itemize}
+
+\paragraph{Éditions du Nouveau Testament en Grec}
+\begin{itemize}
+    \item \fullcite{NestleAland2012}
+    \item \fullcite{WestcottHort1881}
+    \item \fullcite{Tischendorf1864}
+    \item \fullcite{Stephanus1550}
+    \item \fullcite{Beza1598}
+    \end{itemize}
+
+\paragraph{Critique textuelle néo-testamentaire}
+
+
+
+\begin{itemize}
+    \item \fullcite{aland1995text}
+    \item \fullcite{greenlee1964introduction}
+    \item \fullcite{Vaganay1986}
+    \item \fullcite{hatch1951facsimiles}
+\end{itemize}
+
+\paragraph{Paléographie grecque}
+
+\begin{itemize}
+    \item \fullcite{metzger1981manuscripts}
+    \item \fullcite{aland1995text}
+    \item \fullcite{vangroningen1967short}
+    \item \fullcite{cavallo1967ricerche}
+    \item \fullcite{janz_greek_paleography}
+    \item \fullcite{bausi2015comparative}
+\end{itemize}
+
+\paragraph{Outils divers}
+\begin{itemize}
+    \item \url{https://ntvmr.uni-muenster.de} (New Testament Virtual Manuscript Room)
+    \item \url{https://digi.vatlib.it} (Digital Vatican Library)
+    \item \url{https://archivesetmanuscrits.bnf.fr}(Manuscrits numérisés BNF)
+\end{itemize}
+\end{document}
